@@ -1,0 +1,55 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1708302976
+default_env.tres::Environment::6178414840504061387::1708302970::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1601473482::0::1::::<><>::
+F1 Logo.png::CompressedTexture2D::5723007915157873444::1599139623::1708302269::1::::<><>::
+icon.png::CompressedTexture2D::2588369564435152232::1598974487::1708302269::1::::<><>::
+::res://Art/::1707358788
+::res://Art/Cars/::1708302269
+Blue Car.png::CompressedTexture2D::5495879201254467919::1598983771::1708302269::1::::<><>::
+Directional Arrow.png::CompressedTexture2D::310134480415953154::1601148181::1708302269::1::::<><>::
+Green Car.png::CompressedTexture2D::6210459595883275102::1599597547::1708302269::1::::<><>::
+MEG Car.png::CompressedTexture2D::1477918263419742698::1600477988::1708302269::1::::<><>::
+Orange Car.png::CompressedTexture2D::7348466551729259210::1599597428::1708302269::1::::<><>::
+Progress Bar size 1.png::CompressedTexture2D::284688515300702996::1600961201::1708302269::1::::<><>::
+Purple Car.png::CompressedTexture2D::4037806689455355795::1599597479::1708302269::1::::<><>::
+Red Car.png::CompressedTexture2D::1651146679125545690::1598976012::1708302268::1::::<><>::
+Teal Car.png::CompressedTexture2D::8101478802796614354::1600434625::1708302269::1::::<><>::
+Yellow Car.png::CompressedTexture2D::2125677104539506863::1600434587::1708302269::1::::<><>::
+::res://Art/Tiles/::1708302269
+Grass.png::CompressedTexture2D::2960870102516667448::1599010255::1708302269::1::::<><>::
+Grass_Road Angles tile set (x2).png::CompressedTexture2D::315999117522751417::1599326577::1708302269::1::::<><>::
+Grass_Road Angles tile set (x4).png::CompressedTexture2D::6943178281577878447::1599326507::1708302269::1::::<><>::
+Road.png::CompressedTexture2D::2211983710307474880::1599009895::1708302269::1::::<><>::
+Tire Stack.png::CompressedTexture2D::8642107466265501925::1599506446::1708302269::1::::<><>::
+Vertical Finish Line.png::CompressedTexture2D::7915763024596906835::1600435505::1708302269::1::::<><>::
+::res://Export Files/::1708302269
+favicon.png::CompressedTexture2D::2008232945542591619::1601473481::1708302269::1::::<><>::
+index.png::CompressedTexture2D::6311136004926193244::1601473481::1708302269::1::::<><>::
+::res://Fonts/::1708302268
+Cowboys 2.0.otf::FontFile::5875438183449245053::1600903342::1708302268::1::::<><>::
+lemonade.ttf::FontFile::7384298594958787709::1600903066::1708302268::1::::<><>::
+Roboto-Bold.ttf::FontFile::7552039188345109855::1600960449::1708302268::1::::<><>::
+::res://Scenes/::1708302970
+Car.tscn::PackedScene::-1::1708302246::0::1::::<><>::res://Art/Cars/Red Car.png<>res://scripts/Car.gd<>res://Fonts/Roboto-Bold.ttf<>res://Art/Cars/Progress Bar size 1.png<>res://Scenes/Particles/Boost_Particles.gd<>res://Art/Cars/Directional Arrow.png
+Game.tscn::PackedScene::-1::1708302246::0::1::::<><>::res://scripts/Game.gd<>res://scripts/Camera2D.gd<>res://Scenes/GameWorld.tscn
+GameWorld.tscn::PackedScene::-1::1708302246::0::1::::<><>::res://scripts/GameWorld.gd
+GroundTileMap.tscn::PackedScene::-1::1708302246::0::1::::<><>::res://Art/Tiles/Road.png<>res://Art/Tiles/Grass_Road Angles tile set (x2).png<>res://Art/Tiles/Grass.png<>res://Art/Tiles/Vertical Finish Line.png
+MainMenu.tscn::PackedScene::5110875869232860275::1708302970::0::1::::<><>::res://scripts/MainMenu.gd
+TileMaaps.tscn::PackedScene::-1::1708302246::0::1::::<><>::res://Scenes/GroundTileMap.tscn<>res://Art/Tiles/Tire Stack.png
+::res://Scenes/Particles/::1707358788
+Boost_Particles.gd::GDScript::-1::1708302246::0::1::::<>CPUParticles2D<>::
+Sparks.gd::GDScript::-1::1708302246::0::1::::<>CPUParticles2D<>::
+Sparks.tscn::PackedScene::-1::1708302246::0::1::::<><>::res://Scenes/Particles/Sparks.gd
+::res://Scenes/Tracks/::1707358788
+TestTrack1.tscn::PackedScene::-1::1708302246::0::1::::<><>::res://scripts/Track.gd<>res://Art/Tiles/Tire Stack.png<>res://Scenes/GroundTileMap.tscn
+::res://scripts/::1708302421
+Camera2D.gd::GDScript::-1::1708302246::0::1::::<>Camera2D<>::
+Car.gd::GDScript::-1::1708302246::0::1::::<>CharacterBody2D<>::
+Game.gd::GDScript::-1::1708302246::0::1::::<>Node<>::
+GameWorld.gd::GDScript::-1::1708302246::0::1::::<>Node<>::
+MainMenu.gd::GDScript::-1::1708302421::0::1::::<>Node<>::
+Track.gd::GDScript::-1::1708302246::0::1::::<>Node2D<>::
+::res://Singletons/::1707358788
+Game_Settings.gd::GDScript::-1::1708302246::0::1::::<>Node<>::
+Network.gd::GDScript::-1::1708302246::0::1::::<>Node<>::
