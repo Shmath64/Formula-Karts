@@ -10,7 +10,7 @@ func _on_Host_button_down() -> void:
 	#Network.own_name = $NameEdit.text
 	set_names($NameEdit.text,$NameEdit2.text)
 	Network.create_server()
-	Network.net_id = get_tree().get_unique_id()
+	#Network.net_id = get_tree().get_unique_id()
 	print("host")
 
 
@@ -22,13 +22,12 @@ func _on_Join_button_down() -> void:
 	#Network.own_name = $NameEdit.text
 	set_names($NameEdit.text,$NameEdit2.text)
 	Network.join_server()
-	print("join")
 
-func _ready():
-	get_tree().connect("connected_to_server", Callable(self, "connected"))
+func _enter_tree():
+	multiplayer.connect("connected_to_server", Callable(self, "connected"))
 		
 func connected():
-	Network.net_id = get_tree().get_unique_id()
+	Network.net_id = multiplayer.get_unique_id()
 	rpc("player_connected", GameSettings.solo_game, Network.net_id)
 	$Status.text = "Connected to server"
 	

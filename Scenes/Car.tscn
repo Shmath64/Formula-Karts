@@ -1,45 +1,45 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://bkaxwd3hj56a2"]
 
-[ext_resource path="res://Art/Cars/Red Car.png" type="Texture2D" id=1]
-[ext_resource path="res://scripts/Car.gd" type="Script" id=2]
-[ext_resource path="res://Fonts/Roboto-Bold.ttf" type="FontFile" id=3]
-[ext_resource path="res://Art/Cars/Progress Bar size 1.png" type="Texture2D" id=4]
-[ext_resource path="res://Scenes/Particles/Boost_Particles.gd" type="Script" id=5]
-[ext_resource path="res://Art/Cars/Directional Arrow.png" type="Texture2D" id=7]
+[ext_resource type="Texture2D" uid="uid://xr3e6efvj76e" path="res://Art/Cars/Red Car.png" id="1"]
+[ext_resource type="Script" path="res://scripts/Car.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://dfui8njdh0sjn" path="res://Fonts/Roboto-Bold.ttf" id="3"]
+[ext_resource type="Texture2D" uid="uid://eb51pwqfkbou" path="res://Art/Cars/Progress Bar size 1.png" id="4"]
+[ext_resource type="Script" path="res://Scenes/Particles/Boost_Particles.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://eoh4tiayft11" path="res://Art/Cars/Directional Arrow.png" id="7"]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id="1"]
 radius = 5.0
 height = 25.0
 
-[sub_resource type="FontFile" id=2]
-size = 15
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 3 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="Gradient" id=3]
-colors = PackedColorArray( 1, 0, 0, 1, 0.87451, 1, 0, 1 )
+[sub_resource type="Gradient" id="3"]
+colors = PackedColorArray(1, 0, 0, 1, 0.87451, 1, 0, 1)
 
-[node name="Car" type="CharacterBody2D" groups=[
-"local_car",
-]]
-scale = Vector2( 0.8, 0.8 )
+[node name="Car" type="CharacterBody2D" groups=["local_car"]]
+scale = Vector2(0.8, 0.8)
 collision_mask = 4
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 
 [node name="DirectionalArrow" type="Sprite2D" parent="."]
-modulate = Color( 1, 1, 1, 0.639216 )
-texture = ExtResource( 7 )
-offset = Vector2( 40, 0 )
+modulate = Color(1, 1, 1, 0.639216)
+texture = ExtResource("7")
+offset = Vector2(40, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-scale = Vector2( 2.9, 1.4 )
-shape = SubResource( 1 )
+scale = Vector2(2.9, 1.4)
+shape = SubResource("1")
 
 [node name="CarHudNodes" type="Node2D" parent="."]
 
@@ -50,15 +50,10 @@ offset_left = -50.0
 offset_top = -0.0783396
 offset_right = 50.0
 offset_bottom = 42.9217
-theme_override_fonts/font = SubResource( 2 )
+theme_override_fonts/font = SubResource("2")
 text = "Error
 "
-align = 1
-valign = 1
 clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LapNode" type="Node2D" parent="CarHudNodes"]
 
@@ -66,14 +61,9 @@ __meta__ = {
 offset_left = -50.0
 offset_right = 50.0
 offset_bottom = 20.0
-theme_override_fonts/font = SubResource( 2 )
+theme_override_fonts/font = SubResource("2")
 text = "1"
-align = 1
-valign = 1
 clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BoostNode" type="Node2D" parent="."]
 show_behind_parent = true
@@ -85,61 +75,38 @@ offset_top = -31.8068
 offset_right = 31.8719
 offset_bottom = 32.1932
 value = 50.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 4 )
 fill_mode = 4
-tint_under = Color( 0.439216, 0.439216, 0.439216, 0.392157 )
-tint_progress = Color( 0, 1, 0.133333, 0.588235 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_under = ExtResource("4")
+texture_progress = ExtResource("4")
+tint_under = Color(0.439216, 0.439216, 0.439216, 0.392157)
+tint_progress = Color(0, 1, 0.133333, 0.588235)
 
 [node name="BoostPartcles" type="CPUParticles2D" parent="."]
 show_behind_parent = true
-position = Vector2( -16, -12 )
+position = Vector2(-16, -12)
 emitting = false
-amount = 600
+amount = 300
 randomness = 1.0
 lifetime_randomness = 1.0
-local_coords = false
 emission_shape = 1
 emission_sphere_radius = 5.0
-direction = Vector2( 0, 0 )
+direction = Vector2(0, 0)
 spread = 180.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 4.0
-angular_velocity = 400.0
-angular_velocity_random = 1.0
-radial_accel = 5.0
-radial_accel_random = 1.0
-scale_amount = 4.0
-scale_amount_random = 0.5
-color_ramp = SubResource( 3 )
-hue_variation = 1.0
-hue_variation_random = 0.04
-script = ExtResource( 5 )
+gravity = Vector2(0, 0)
+color_ramp = SubResource("3")
+script = ExtResource("5")
 
 [node name="BoostPartcles2" type="CPUParticles2D" parent="."]
 show_behind_parent = true
-position = Vector2( -16, 12 )
+position = Vector2(-16, 12)
 emitting = false
-amount = 600
+amount = 300
 randomness = 1.0
 lifetime_randomness = 1.0
-local_coords = false
 emission_shape = 1
 emission_sphere_radius = 5.0
-direction = Vector2( 0, 0 )
+direction = Vector2(0, 0)
 spread = 180.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 4.0
-angular_velocity = 400.0
-angular_velocity_random = 1.0
-radial_accel = 5.0
-radial_accel_random = 1.0
-scale_amount = 4.0
-scale_amount_random = 0.5
-color_ramp = SubResource( 3 )
-hue_variation = 1.0
-hue_variation_random = 0.04
-script = ExtResource( 5 )
+gravity = Vector2(0, 0)
+color_ramp = SubResource("3")
+script = ExtResource("5")

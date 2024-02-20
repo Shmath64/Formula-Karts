@@ -55,16 +55,15 @@ func _process(_delta: float) -> void:
 		players_created = true
 		
 func create_players():
-	for id in Network.peer_ids:
+	for id in Network.peer_ids: #Create other cars
 		create_player(id)
 		if Network.splitscreen_players.has(id):
 			create_player(id+1)
-	create_player(Network.net_id)
+	create_player(Network.net_id) #Create this car
 	if !GameSettings.solo_game:
 		create_player(Network.net_id+1)
 	
 func create_player(id):
-	print("creating player")
 	var p = preload("res://Scenes/Car.tscn").instantiate()
 	p.name = str(id)
 	p.position = starting_positions[Network.player_num_dict[id]]

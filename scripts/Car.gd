@@ -42,10 +42,10 @@ func initialize(id):
 		else:
 			name = str("Car2")
 			$CarHudNodes/NameNode/NameLabel.text = GameSettings.player2_name
-	print("id = %s" % id)
-	print("Net_id = %s" % Network.net_id)
-	if !GameSettings.offline_game:
-		splitscreen_id = Network.net_id + 1
+	#print("id = %s" % id)
+	#print("Net_id = %s" % Network.net_id)
+	#if !GameSettings.offline_game:
+		#splitscreen_id = Network.net_id + 1
 	if id == Network.net_id:
 		is_master = true
 		$CarHudNodes/NameNode/NameLabel.text = GameSettings.player1_name
@@ -77,12 +77,16 @@ func _process(delta: float) -> void:
 		move_and_slide()
 		_velocity = _velocity
 		if GameSettings.offline_game == false: #If playing online, update this car's info on others' game instances
-			rpc_unreliable("update_position", position)
-			rpc_unreliable("update_rotation", rotation)
-			rpc_unreliable("update_braking_input", braking_input)
-			rpc_unreliable("update_turn_input", turning_input)
-			rpc_unreliable("update_boosting_input", boosting_input)
-			rpc_unreliable("update_boost_fuel", boost_fuel)
+			#rpc_unreliable("update_position", position) <- Deprecated format
+			update_position.rpc(position)
+			update_rotation.rpc(rotation)
+			update_braking_input.rpc(braking_input)
+			#rpc_unreliable("update_turn_input", turning_input)
+			update_turn_input.rpc(turning_input)
+			#rpc_unreliable("update_boosting_input", boosting_input)
+			update_boosting_input.rpc(boosting_input)
+			#rpc_unreliable("update_boost_fuel", boost_fuel)
+			update_boost_fuel.rpc(boost_fuel)
 			
 	turn(delta)
 	gas_and_brake(delta)
@@ -158,7 +162,7 @@ func gas_and_brake(delta):
 		is_boosting = false
 		var backwards = Vector2(-1,0).rotated(rotation)
 		set_velocity(backwards)
-		move_and_slide()
+		#move_and_slide()
 		backwards = _velocity #Prevents the glitch where the player can't reverse while pressed up against a wall
 		if speed > 0:
 			speed -= rate_of_deceleration * braking_input * delta
