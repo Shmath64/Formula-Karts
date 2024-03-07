@@ -60,7 +60,6 @@ sources/0 = SubResource("TileSetAtlasSource_kufgs")
 [node name="TileMaps" type="Node"]
 
 [node name="GroundTileMap" parent="." instance=ExtResource("1")]
-format = 2
 
 [node name="ObstaclesTileMap" type="TileMap" parent="."]
 scale = Vector2(0.5, 0.5)

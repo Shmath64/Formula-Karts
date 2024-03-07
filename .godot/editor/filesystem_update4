@@ -1,14 +1,9 @@
 res://default_env.tres
 res://Scenes/MainMenu.tscn
-res://scripts/Car.gd
-res://Singletons/Network.gd
-res://scripts/MainMenu.gd
-res://scripts/GameWorld.gd
 res://Scenes/GameWorld.tscn
 res://Scenes/Car.tscn
 res://Scenes/Game.tscn
 res://Scenes/TileMaaps.tscn
 res://Scenes/GroundTileMap.tscn
 res://Scenes/Tracks/TestTrack1.tscn
-res://Scenes/Particles/Boost_Particles.gd
-res://scripts/Game.gd
+res://scripts/Car.gd

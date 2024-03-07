@@ -33,8 +33,9 @@ var crashed_position
 
 var meg_color = preload("res://Art/Cars/MEG Car.png")
 
-func initialize(id):
+func initialize(id): #local_player_num is NOT being set to "2" for the 
 	name = str(id)
+	print("name: " + name + ", id: " + str(id) + ", local_player_num: " + str(local_player_num))
 	if id == 0:
 		if local_player_num == 1:
 			name = str("Car1")
@@ -52,7 +53,9 @@ func initialize(id):
 		rpc("set_name_tag",GameSettings.player1_name)
 		
 	if !GameSettings.offline_game:
+		splitscreen_id = Network.net_id + 1
 		if id == splitscreen_id:
+			print("RUN HERE")
 			$CarHudNodes/NameNode/NameLabel.text = GameSettings.player2_name
 			rpc("set_name_tag",GameSettings.player2_name)
 			is_master = true
